@@ -28,8 +28,8 @@ url: "https://marco89-moa.github.io"
 github:
   username: marco89-moa
 
-linkedIn: Marco Moavero
-  username:
+linkedIn: 
+  username: Marco Moavero
 
 social:
   # 
@@ -39,7 +39,7 @@ social:
   fediverse_handle: # fill in your fediverse handle. E.g. "@username@domain.com"
   links:
     # The first element serves as the copyright owner's link
-    - www.linkedin.com/in/marco-moavero-877769153 # change to your Twitter homepage
+    - https://www.linkedin.com/in/marco-moavero-877769153 # change to your Twitter homepage
     - https://github.com/marco89-moa # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
