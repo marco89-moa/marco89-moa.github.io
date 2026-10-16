@@ -22,6 +22,7 @@ Attualmente opero su infrastrutture VMware vSphere ad alta affidabilità e parte
 - VMware ESXi
 - Microsoft Hyper-V
 - Proxmox VE
+- H3C CAS 
 - High Availability (HA)
 - Gestione e troubleshooting macchine virtuali
 
