@@ -6,13 +6,11 @@ order: 1
 
 ## Chi sono
 
-Sono un System Engineer con oltre 8 anni di esperienza nella gestione e amministrazione di infrastrutture IT, ambienti virtualizzati, sistemi operativi Windows e Linux, networking, storage e soluzioni di backup enterprise.
+Sono un Infrastructure & System Engineer con oltre 6 anni di esperienza nella progettazione, gestione e troubleshooting di infrastrutture IT enterprise.
 
-Nel corso della mia esperienza professionale ho maturato competenze nella gestione di infrastrutture basate su VMware vSphere, Microsoft Hyper-V e sistemi Linux, occupandomi di provisioning, monitoraggio, troubleshooting e manutenzione degli ambienti IT.
+Nel corso della mia carriera ho maturato esperienza nella virtualizzazione, nei sistemi Windows e Linux, nello storage enterprise, nelle soluzioni di backup e nelle reti dati.
 
-Attualmente opero su infrastrutture VMware vSphere enterprise in configurazione High Availability, collaborando alle attività di esercizio, monitoraggio e risoluzione delle problematiche legate agli host ESXi, alle macchine virtuali e ai sistemi di storage.
-
-Sono inoltre coinvolto in attività di migrazione di workload virtualizzati verso piattaforme Proxmox VE.
+Attualmente opero su infrastrutture VMware vSphere ad alta affidabilità e partecipo ad attività di migrazione verso piattaforme Proxmox VE e H3c CAS.
 
 ---
 
