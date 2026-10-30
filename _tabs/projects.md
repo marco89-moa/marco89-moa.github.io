@@ -23,4 +23,4 @@ Progetto personale dedicato allo studio e alla sperimentazione di tecnologie di 
 - Tailscale
 - Storage condiviso
 
-[Scopri il progetto](../homelab/)
+ Articolo disponibile nel blog.
