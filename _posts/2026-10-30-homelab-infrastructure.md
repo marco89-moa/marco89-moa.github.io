@@ -216,8 +216,16 @@ e rappresenta uno spazio di apprendimento continuo in cui sperimentare nuove tec
 
 Le attività pianificate per le prossime evoluzioni del laboratorio comprendono:
 
-- Ottimizzazione dello storage
-- Introduzione di nuove VM e container
-- Studio di soluzioni di backup dedicate
-- Approfondimento delle funzionalità avanzate di Proxmox VE
+## Evoluzioni pianificate
+
+Una delle prossime attività previste consiste nell'introduzione di una soluzione di backup dedicata mediante Proxmox Backup Server.
+
+L'obiettivo è collegare un secondo disco USB da 1 TB al nodo pbs-03 e utilizzarlo come repository indipendente per i backup.
+
+Questa soluzione consentirà di mantenere separati:
+
+- i dati di produzione ospitati sul disco WD da 4 TB
+- i backup dei servizi del laboratorio
+riducendo il rischio di perdita simultanea dei dati in caso di guasto del supporto di storage principale.
+
 - Ulteriori attività di automazione e monitoraggio
