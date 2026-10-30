@@ -1,3 +1,8 @@
+---
+title: Projects
+icon: fas fa-server
+order: 2
+---
 Homelab Infrastructure
 
 Cluster Proxmox VE a 3 nodi realizzato per approfondire
