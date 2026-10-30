@@ -71,7 +71,7 @@ Successivamente l'infrastruttura è stata ridisegnata introducendo una piattafor
 
 ### Componenti
 
-- 3 Mini PC
+- 3 Mini PC winblu
 - Proxmox VE
 - Switch Ethernet a 8 porte
 - Storage dedicato
@@ -122,6 +122,55 @@ Per consentire l'amministrazione remota e l'accesso ai servizi in sicurezza è s
 # Architettura attuale
 
 L'infrastruttura attuale è basata su un cluster Proxmox VE a tre nodi utilizzato per ospitare servizi Linux self-hosted e per attività di studio e sperimentazione.
+
+## Diagramma architetturale
+
+```mermaid
+flowchart TB
+
+    INTERNET[Internet]
+    TAILSCALE[Tailscale VPN]
+
+    INTERNET --> TAILSCALE
+
+    subgraph MGMT["Management Network"]
+        PVE01[pve-01<br/>Proxmox VE]
+        PVE02[pve-02<br/>Proxmox VE]
+        PBS03[pbs-03<br/>Proxmox Backup Server]
+    end
+
+    TAILSCALE --> PVE01
+    TAILSCALE --> PVE02
+    TAILSCALE --> PBS03
+
+    subgraph SERVICE["Erogazione Network"]
+        WD4TB[WD Elements 4TB<br/>Primary Storage]
+        NFS[NFS Export]
+    end
+
+    PBS03 --> WD4TB
+    WD4TB --> NFS
+
+    NFS --> PVE01
+    NFS --> PVE02
+
+    subgraph WORKLOADS["Hosted Services"]
+        NEXTCLOUD[CT100 Nextcloud LXC]
+        DB[(MariaDB)]
+    end
+
+    PVE01 --> NEXTCLOUD
+    NEXTCLOUD --> DB
+    NFS --> NEXTCLOUD
+
+    subgraph ROADMAP["Planned Backup Strategy"]
+        USB1TB[USB HDD 1TB]
+        PBSREPO[Backup Repository]
+    end
+
+    PBS03 -. Future .-> USB1TB
+    USB1TB -. Future .-> PBSREPO
+    NEXTCLOUD -. Scheduled Backup .-> PBSREPO
 
 ## Cluster
 
