@@ -23,4 +23,4 @@ Progetto personale dedicato allo studio e alla sperimentazione di tecnologie di 
 - Tailscale
 - Storage condiviso
 
- Articolo disponibile nel blog.
+ Articolo disponibile nella sezione Blog.
