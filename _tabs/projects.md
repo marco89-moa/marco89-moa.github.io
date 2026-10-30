@@ -1,26 +1,23 @@
----
-title: Projects
-icon: fas fa-server
-order: 2
----
+Homelab Infrastructure
 
-# Progetti
+Cluster Proxmox VE a 3 nodi realizzato per approfondire
+virtualizzazione, Linux, networking e servizi self-hosted.
 
-In questa sezione raccolgo i principali progetti realizzati sia in ambito professionale sia all'interno del mio Home Lab.
+Principali componenti:
 
----
+• Cluster Proxmox VE + PBS
+• Nextcloud in container LXC
+• MariaDB
+• Storage da 4 TB + BCK
+• Tailscale VPN
+• Accesso remoto sicuro
 
-## Homelab Infrastructure
+Evoluzione del progetto:
 
-Progetto personale dedicato allo studio e alla sperimentazione di tecnologie di virtualizzazione, networking, storage e servizi self-hosted.
-
-**Tecnologie principali:**
-
-- Proxmox VE
-- Linux
-- Nextcloud
-- MariaDB
-- Tailscale
-- Storage condiviso
+1. Nextcloud su Raspberry Pi
+2. Migrazione SQLite → MariaDB
+3. Realizzazione cluster Proxmox
+4. Migrazione Nextcloud su LXC
+5. Accesso remoto tramite Tailscale
 
  Articolo disponibile nella sezione Blog.
