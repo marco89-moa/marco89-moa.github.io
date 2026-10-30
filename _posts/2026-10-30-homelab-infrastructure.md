@@ -117,66 +117,67 @@ Per consentire l'amministrazione remota e l'accesso ai servizi in sicurezza è s
 
 ---
 
+---
+
 # Architettura attuale
 
-## Compute
+L'infrastruttura attuale è basata su un cluster Proxmox VE a tre nodi utilizzato per ospitare servizi Linux self-hosted e per attività di studio e sperimentazione.
 
-- Cluster Proxmox VE composto da 3 nodi
-- Gestione centralizzata tramite interfaccia Proxmox
-- Container LXC
-- Macchine virtuali dedicate ai test
+## Cluster
 
-## Networking
+Il cluster è composto dai seguenti nodi:
 
-- Switch Ethernet 8 porte unmanaged
-- Connettività LAN dedicata
-- 2 subnet divise in management ed erogazione
-- Accesso remoto tramite Tailscale
+- pve-01
+- pve-02
+- pbs-03
 
-## Storage
-
-- HDD esterno da 4 TB 
-- Archiviazione dati e servizi del laboratorio
-
-## Servizi principali
-
-- Nextcloud
-- MariaDB
-- Tailscale
-- Servizi Linux di laboratorio
+I nodi vengono amministrati tramite l'interfaccia centralizzata di Proxmox VE.
 
 ---
 
-# Tecnologie utilizzate
-
-## Virtualizzazione
-
-- Proxmox VE
-- LXC Containers
-
-## Sistemi Operativi
-
-- Linux
-- Raspberry Pi OS
-- Debian
-
-## Database
-
-- MariaDB
-- SQLite
-
 ## Networking
 
-- Ethernet
-- TCP/IP
-- VPN
-- Tailscale
+L'ambiente utilizza due reti distinte:
+
+### Management Network
+
+Utilizzata per:
+
+- gestione dei nodi
+- amministrazione del cluster
+- comunicazioni Proxmox
+
+### Erogazione Network
+
+Rete dedicata ai servizi e allo storage.
+
+Questa rete è stata realizzata sfruttando la seconda scheda di rete disponibile sul nodo pbs-03.
+
+---
 
 ## Storage
 
-- Storage locale
-- HDD USB 4 TB
-- HDD USB 2TB
+Il nodo pbs-03 ospita un disco esterno WD da 4 TB.
+
+Lo storage viene condiviso tramite NFS agli altri nodi del laboratorio.
+
+Questo approccio consente di centralizzare i dati dei servizi mantenendo la semplicità dell'infrastruttura.
+
+---
+
+## Nextcloud
+
+Il servizio Nextcloud è attualmente ospitato all'interno di un container LXC eseguito sul nodo pve-01.
+
+I dati dell'applicazione vengono archiviati sullo storage condiviso esportato tramite NFS dal nodo pbs-03.
+
+---
+
+## Accesso Remoto
+
+L'accesso all'intera infrastruttura è protetto tramite Tailscale.
+
+Questa soluzione consente l'accesso remoto ai servizi e ai sistemi di amministrazione senza esporre direttamente il laboratorio su Internet.
 
 ---
 
