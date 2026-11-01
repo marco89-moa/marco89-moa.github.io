@@ -125,7 +125,7 @@ L'infrastruttura attuale è basata su un cluster Proxmox VE a tre nodi utilizzat
 
 ## Diagramma architetturale
 
-![Architettura Home Lab](/assets/img/homelab-architecture-final.png)
+![Architettura Home Lab]({{ '/assets/img/homelab-architecture-final.png' | relative_url }})
 
 *Figura 1 – Architettura logica dell'Home Lab. L'infrastruttura è composta da un cluster Proxmox VE formato dai nodi pve-01, pve-02 e dal nodo Proxmox Backup Server pbs-03. La rete di Management è dedicata all'amministrazione del cluster e dei sistemi, mentre una seconda interfaccia di rete sul nodo pbs-03 è utilizzata per la rete di Erogazione dedicata al traffico dati e allo storage. Il disco WD Elements da 4 TB viene esportato tramite NFS ed è utilizzato dal container LXC CT100 ospitato su pve-01, nel quale sono eseguiti Nextcloud e MariaDB. L'accesso remoto all'infrastruttura avviene tramite Tailscale VPN. La roadmap prevede l'introduzione di un repository di backup dedicato basato su un disco USB da 1 TB collegato al nodo Proxmox Backup Server.*
 
