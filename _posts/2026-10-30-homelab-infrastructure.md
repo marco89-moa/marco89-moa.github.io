@@ -125,52 +125,8 @@ L'infrastruttura attuale è basata su un cluster Proxmox VE a tre nodi utilizzat
 
 ## Diagramma architetturale
 
-```mermaid
-flowchart TB
+Diagramma logico dell'infrastruttura attuale.
 
-    INTERNET[Internet]
-    TAILSCALE[Tailscale VPN]
-
-    INTERNET --> TAILSCALE
-
-    subgraph MGMT["Management Network"]
-        PVE01[pve-01<br/>Proxmox VE]
-        PVE02[pve-02<br/>Proxmox VE]
-        PBS03[pbs-03<br/>Proxmox Backup Server]
-    end
-
-    TAILSCALE --> PVE01
-    TAILSCALE --> PVE02
-    TAILSCALE --> PBS03
-
-    subgraph SERVICE["Erogazione Network"]
-        WD4TB[WD Elements 4TB<br/>Primary Storage]
-        NFS[NFS Export]
-    end
-
-    PBS03 --> WD4TB
-    WD4TB --> NFS
-
-    NFS --> PVE01
-    NFS --> PVE02
-
-    subgraph WORKLOADS["Hosted Services"]
-        NEXTCLOUD[CT100 Nextcloud LXC]
-        DB[(MariaDB)]
-    end
-
-    PVE01 --> NEXTCLOUD
-    NEXTCLOUD --> DB
-    NFS --> NEXTCLOUD
-
-    subgraph ROADMAP["Planned Backup Strategy"]
-        USB1TB[USB HDD 1TB]
-        PBSREPO[Backup Repository]
-    end
-
-    PBS03 -. Future .-> USB1TB
-    USB1TB -. Future .-> PBSREPO
-    NEXTCLOUD -. Scheduled Backup .-> PBSREPO
 
 ## Cluster
 
